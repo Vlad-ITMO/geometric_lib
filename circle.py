@@ -1,7 +1,9 @@
 import math
 
 
+
 def area(r):
+    
     ''' возвращает площадь круга
 
                 Параметры:
@@ -11,10 +13,17 @@ def area(r):
                       произведение числа pi и квадрат радиуса (т.е. площадь)
     '''
     
-    return math.pi * r * r
-
+    if not isinstance(r, (int, float)):
+        raise TypeError("Radius must be an integer or float")
+    
+    if r <= 0:
+        raise ValueError("Radius must be a non-negative number")
+    
+    return math.pi * r * r 
+''' osdvk '''
 
 def perimeter(r):
+    
     ''' возвращает периметер круга
 
                 Параметры:
@@ -23,6 +32,12 @@ def perimeter(r):
                 Возвращаемое значение:
                       произведение числа два, числа pi и радиуса (т.е. периметер)
     '''
+    
+    if not isinstance(r, (int, float)):
+        raise TypeError("Radius must be an integer or float")
+    
+    if r <= 0:
+        raise ValueError("Radius must be a non-negative number")
     
     return 2 * math.pi * r
 
