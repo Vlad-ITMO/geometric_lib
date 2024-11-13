@@ -1,4 +1,5 @@
 def area(a, b):
+    
     ''' возвращает площадь прямоугольника
 
                 Параметры:
@@ -8,9 +9,20 @@ def area(a, b):
                 Возвращаемое значение:
                       произведение обеих сторон (т.е. площадь)
     '''
+    
+    if a <= 0 or b <= 0:
+        raise ValueError("Длины сторон должны быть положительными и не равны 0")
+
+    if a == b:
+        raise ValueError("Длины сторон не могут равны между собой")
+
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("a и b должны быть int или float значением")
+    
     return a * b
 
 def perimeter(a, b):
+    
     ''' возвращает периметер прямоугольника
 
                 Параметры:
@@ -20,4 +32,14 @@ def perimeter(a, b):
                 Возвращаемое значение:
                       сумма всех четырёх сторон прямоугольника (т.е. периметер)
     '''
+
+    if a <= 0 or b <= 0:
+        raise ValueError("Длины сторон должны быть положительными числами и не равны 0")
+
+    if a == b:
+        raise ValueError("Длины сторон не могут быть равны между сосбой")
+
+    if not isinstance(a, (int, float)) or not isinstance(b, (int, float)):
+        raise TypeError("a и b должны быть int или float значением")
+        
     return 2 * a + 2 * b
