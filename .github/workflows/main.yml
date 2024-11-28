@@ -23,4 +23,8 @@ jobs:
 
     - name: Run unit tests
       run: |
-        python -m unittest unittests_*.py
+        python -m unittest unittests_circle.py
+        python -m unittest unittests_triangle.py
+        python -m unittest unittests_rectangle.py
+        python -m unittest unittests_square.py
+  
